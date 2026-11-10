@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <meta name="theme-color" content="#080b10" />
+  <meta name="description" content="时间的尽头：一个关于熵、记忆与重生的交互宇宙。Three.js 实时生成。" />
+  <title>时间的尽头 · THE END OF TIME</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23080b10'/%3E%3Ccircle cx='32' cy='32' r='19' fill='none' stroke='%23e4bd87' stroke-width='3'/%3E%3Cpath d='M32 14v18l15-7' fill='none' stroke='%23e4bd87' stroke-width='3'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body>
+  <canvas id="universe" aria-label="可拖动旋转、滚轮缩放的三维时间装置"></canvas>
+  <div class="grain" aria-hidden="true"></div><div class="vignette" aria-hidden="true"></div>
+  <div id="loading"><span class="load-ring"></span><p>正在唤醒最后一道光</p><small>ASSEMBLING THE INFINITE</small></div>
+  <header>
+    <a class="brand" href="#" aria-label="时间的尽头首页"><span class="brand-mark">◷</span><span>CHRONOS<span class="brand-sub">AN EXPERIMENT IN ETERNITY</span></span></a>
+    <div class="edition"><span class="status-dot"></span> LIVE GENERATIVE EXPERIENCE <span class="edition-num">№ 001</span></div>
+    <button id="sound" class="icon-button" aria-label="开启宇宙环境音" title="环境音">♪<span id="sound-label">声音 关</span></button>
+  </header>
+  <main>
+    <div class="chapter"><span class="thin-line"></span> CHAPTER ∞ <span class="muted">/</span> 最后一位观察者</div>
+    <section class="title-block"><div class="eyebrow">WHERE EVERYTHING ENDS, SOMETHING REMAINS.</div><h1>时间的<span>尽头</span><i>THE END<br>OF TIME</i></h1><p>当最后一颗恒星熄灭，<br>你，还记得光的形状吗？</p><button id="journey" class="text-action">进入时间裂隙 <span>↗</span></button></section>
+    <div class="coordinate coordinate-left"><b id="epoch">13.800</b><span>BILLION YEARS ELAPSED</span><div class="coordinate-line"></div><small>RA 23h 59m 59.9s<br>DEC +00° 00′ 00″</small></div>
+    <aside class="telemetry"><span class="tiny-label">OBSERVATION LOG</span><div class="telemetry-row"><span>宇宙状态</span><b id="phase-name">余晖纪元</b></div><div class="telemetry-row"><span>时间流速</span><b id="speed-label">1.00 ×</b></div><div class="telemetry-row"><span>拾回记忆</span><b><span id="memory-count">00</span> / 05</b></div><div class="signal"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><p>拖动，绕过事件视界。<br>寻找仍在闪烁的五枚记忆。</p></aside>
+    <div id="memory-caption" role="status" aria-live="polite"><span class="tiny-label">A FRAGMENT OF WHAT WAS</span><h2></h2><p></p></div>
+    <div id="hover-tip">点击拾回记忆</div>
+  </main>
+  <footer>
+    <div class="controls"><button id="pause" class="circle-button" aria-label="暂停时间" title="空格：暂停 / 继续">Ⅱ</button><div class="time-control"><label for="time-speed">时间，并非只能向前 <span id="direction-label">FORWARD</span></label><input id="time-speed" aria-label="时间流速" type="range" min="-2" max="3" step="0.05" value="1" /><div class="range-labels"><span>− 倒流</span><span>静止</span><span>快进 +</span></div></div><button id="reset" class="reset-button" title="R：复位">↺<span>复位</span></button></div>
+    <div class="scene-actions"><button id="rebirth"><span class="rebirth-symbol">✺</span> <span>让时间重生<small>REWRITE THE INFINITE</small></span><span class="button-arrow">↗</span></button><div class="utility"><button id="quality" aria-label="切换渲染画质">画质 · 自动</button><button id="help" aria-label="显示操作说明">操作说明 ?</button><button id="fullscreen" aria-label="进入全屏">⤢</button></div></div>
+    <div class="footer-meta"><span>DRAG TO ORBIT <i>·</i> SCROLL TO EXPLORE <i>·</i> CLICK A MEMORY</span><span>NOT AN END. A POSSIBILITY.</span></div>
+  </footer>
+  <dialog id="help-dialog"><button id="close-help" class="dialog-close" aria-label="关闭说明">×</button><span class="tiny-label">A GUIDE TO THE INFINITE</span><h2>成为最后一位观察者</h2><p>拖动鼠标，环绕时间装置；滚动滚轮，靠近或远离。触屏可单指旋转、双指缩放。</p><ul><li><b>拾回记忆</b> · 点击发光的菱形碎片，收集五枚记忆。</li><li><b>操控时间</b> · 拖动底部滑杆，让时间倒流、静止或加速。</li><li><b>空格</b> · 暂停 / 继续　<b>R</b> · 复位视角与时间</li><li><b>让时间重生</b> · 触发一次宇宙脉冲，开启新的纪元。</li><li><b>声音</b> · 手动开启合成环境音，无需外部音频文件。</li></ul><p class="muted">本作品所有星尘、材质和光影均实时生成。没有外部贴图，也没有预渲染视频。</p></dialog>
+  <div id="error" role="alert" hidden></div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
