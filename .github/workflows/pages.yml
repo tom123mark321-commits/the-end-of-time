@@ -26,9 +26,10 @@ jobs:
           node-version: 22
           cache: npm
       - name: Install dependencies
-        # Re-resolve optional Rollup native packages for the Ubuntu runner.
-        # The lockfile was generated on Windows and npm can omit Linux binaries.
+        # The lockfile was generated on Windows and omits Linux optional packages.
         run: npm install --include=optional --no-audit --no-fund
+      - name: Install Linux Rollup binary
+        run: npm install --no-save --package-lock=false @rollup/rollup-linux-x64-gnu@4.68.2
       - name: Build
         run: npm run build
       - name: Setup Pages
